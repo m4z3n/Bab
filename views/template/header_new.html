@@ -1,0 +1,37 @@
+
+<div id="dd_tier_top">
+    <div class="dd_row">
+        
+        <div id="dd_title">
+            <a href="/"><h1>bustabit</h1></a>
+        </div>
+        
+        <div id="dd_menu">
+            <ul id="dd_tier_top_list">
+                <li class="dd_tier_top_list_item"><a href="/request">Faucet</a></li>
+                <li class="dd_tier_top_list_item"><a href="/leaderboard">Leaderboard</a></li>
+                <li class="dd_tier_top_list_item"><a href="/stats">Stats</a></li>
+                <li class="dd_tier_top_list_item"><a href="/faq">FAQ</a></li>
+                <li class="dd_tier_top_list_item_user"> <!-- we all love big class names -->
+                    {{?it.user}}
+                    <div class="balance-bits">
+                        <span>Bits: </span>
+                        <span class="balance">{{#def.format:{n: it.user.balance_satoshis, decimals:2} }}</span>
+                    </div>
+                    <div class="username">
+                        <a href="/account">{{=it.user.username}}</a>
+                    </div>
+                    {{??}}
+                    <div class="register">
+                        <a href="/register">Register</a>
+                    </div>
+                    <div class="login">
+                        <a href="/login">Log in</a>
+                    </div>
+                    {{?}}
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
